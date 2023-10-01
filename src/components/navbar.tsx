@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link href='/'>Home</Link>
         <Link href='/store'>Store</Link>
         <Link href='/login'>Login</Link>
-        <Image src="/cart.webp" alt="" height={25} width={25}></Image>
+        <Link href='/cart'><Image src="/cart.webp" alt="" height={25} width={25}></Image></Link>
         </div>
         
     </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className="bg-gray-300">
+      <body className="bg-white min-h-[calc(100vh)]">
       <Navbar/>
         {children}
       <Footer/>  

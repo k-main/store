@@ -46,15 +46,15 @@ const Store = () => {
     <div className='min-h-[calc(100vh-6rem)] h-auto flex flex-wrap mt-10 justify-center'>
       {data.map((item) => (
         // ITEM CONTAINER 
-        <div key={item.id} className='flex flex-col bg-white h-1/2 mx-2 mt-4 items-center p-5 rounded-md'>
+        <div key={item.id} className='flex flex-col bg-white mx-2 mt-4 items-center p-3 rounded-md'>
           {/* IMAGE CONTAINER  */}
-          <div className=''> 
+          <Link href={"store/" + item.id} className=''> 
             <Image 
                 src={item.image} 
                 alt="" 
                 width={350}
                 height={350}/> 
-          </div>
+          </Link>
           {/* TEXT CONTAINER  */}
           <div className='mt-2 flex flex-col text-center w-full items-center'>
             <Link className="hover:pointer hover:text-slate-600 text-lg font-bold" href={"store/" + item.id}>{item.title}</Link>

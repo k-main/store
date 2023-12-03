@@ -15,16 +15,16 @@ const Login = () => {
 
       <div className='flex flex-col gap-2 text-center'>
         <div>Or</div>
-        <button className='bg-slate-700 text-white p-3 rounded-md'>Sign in with Google</button>
+        <button className='bg-slate-700 text-white p-3 rounded-md shadow-xl'>Sign in with Google</button>
       </div>
 
       <form className='flex flex-col gap-5 mt-5'>
 
-        <input type='email' placeholder='Username' className='p-5 text bg-slate-300 rounded-md focus:border-slate-700'></input>
+        <input type='email' placeholder='Username' className='p-5 text bg-slate-300 rounded-md focus:border-slate-700 shadow-xl'></input>
 
-        <input type='password' placeholder='Password' className='p-5 bg-slate-300 rounded-md focus:border-slate-700 text-slate-700'></input>
+        <input type='password' placeholder='Password' className='p-5 bg-slate-300 rounded-md focus:border-slate-700 text-slate-700 shadow-xl'></input>
 
-        <button className=' bg-slate-700 text-white rounded-md p-4'> Sign in </button>
+        <button className=' bg-slate-700 text-white rounded-md p-4 shadow-2xl'> Sign in </button>
       </form>
 
 

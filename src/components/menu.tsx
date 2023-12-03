@@ -9,7 +9,6 @@ const links = [
     {id: 2, title: "Store", url: "/store"},
     {id: 3, title: "Cart", url: "/cart"},
     {id: 4, title: "Login", url: "/login"},
-
 ]
 
 const Menu = () => {

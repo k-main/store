@@ -37,8 +37,8 @@ const Slider = () => {
     <div className="flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-9rem)] lg:flex-row border-solid border-black"> 
     {/* TEXT CONTAINER */}
     <div className="flex h-1/3 items-center justify-center flex-col gap-6 text-slate-700 font-bold lg:flex-1 lg:h-auto bg-white">
-      <h1 className='text-2xl md:text-5xl xl:text-5xl text-center p-4'> {data[currentSlide].title}</h1>
-      <Link href="/store" className='bg-slate-700 text-white py-4 px-8 rounded-md shadow-xl'>Order now</Link>
+      <h1 className='text-2xl md:text-4xl xl:text-5xl text-center p-4'> {data[currentSlide].title}</h1>
+      <Link href="/store" className='bg-slate-700 text-white py-4 px-8 rounded-lg shadow-xl'>Order now</Link>
     </div>
     {/* IMG CONTAINER */}
     <div className="w-full relative flex-1"> 

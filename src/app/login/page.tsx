@@ -1,7 +1,12 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
+import { signIn, useSession } from 'next-auth/react'
 
 const Login = () => {
+
+  const { data, status } = useSession();
+
   return (
     <div className='min-h-[calc(100vh-6rem)] h-auto flex flex-col items-center justify-center gap-5 align'>
 
@@ -15,7 +20,7 @@ const Login = () => {
 
       <div className='flex flex-col gap-2 text-center'>
         <div>Or</div>
-        <button className='bg-slate-700 text-white p-3 rounded-md shadow-xl'>Sign in with Google</button>
+        <button className='bg-slate-700 text-white p-3 rounded-md shadow-xl' onClick={() => signIn("google")}>Sign in with Google</button>
       </div>
 
       <form className='flex flex-col gap-5 mt-5'>

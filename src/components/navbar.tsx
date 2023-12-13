@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Menu from './menu'
+import UserLinks from './UserLinks'
 
 const Navbar = () => {
   return (
@@ -18,7 +19,8 @@ const Navbar = () => {
         <div className='hidden md:flex md:gap-5 lg:gap-7 xl:mx-12'>        
         <Link href='/'>Home</Link>
         <Link href='/store'>Store</Link>
-        <Link href='/login'>Login</Link>
+        {/* <Link href='/login'>Login</Link> */}
+        <UserLinks/>
         <Link href='/cart'><Image src="/cart.webp" alt="" height={25} width={25}></Image></Link>
         </div>
         

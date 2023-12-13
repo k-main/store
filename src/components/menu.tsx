@@ -3,12 +3,12 @@ import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
+import UserLinks from './UserLinks'
 
 const links = [
     {id: 1, title: "Home", url: "/"},
     {id: 2, title: "Store", url: "/store"},
-    {id: 3, title: "Cart", url: "/cart"},
-    {id: 4, title: "Login", url: "/login"},
+    {id: 3, title: "Cart", url: "/cart"}
 ]
 
 const Menu = () => {
@@ -26,8 +26,10 @@ const Menu = () => {
           {links.map(item => (
             <Link href={item.url} key={item.id} onClick={() => setOpen(false)}> {item.title} </Link>
           ))}
+          <  UserLinks />
         </div>
         )}
+
     </div>
   )
 }

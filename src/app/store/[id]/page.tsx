@@ -2,6 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+export type ProductType = {
+  id: string;
+  title: string;
+  desc?: string;
+  img?: string;
+  price: number;
+  options?: { title: string; additionalPrice: number }[];
+};
+
 const data = [
   {
     id: 1,
@@ -12,23 +21,37 @@ const data = [
   }
 ]
 
-const Item = () => {
+const getData = async (id: string) => {
+  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed!");
+  }
+
+  return res.json();
+};
+
+
+const Item = async ( {params} : { params: {id: string }} ) => {
+  const singleProduct:ProductType = await getData(params.id);
   return (
     <div className='flex flex-col md:flex-row items-center my-4 gap-10 md:justify-center'>
       {/* IMAGE CONTAINER  */}
-      <div className=''>
-      <Image src={data[0].image} alt='' className='relative' height={600} width={600}/>
-      </div>
+      {singleProduct.img && (<div className=''>
+      <Image src={singleProduct.img} alt='' className='relative' height={600} width={600}/>
+      </div>)}
       {/* TEXT CONTAINER  */}
       <div className='flex flex-col items-center md:w-1/3'>
-      <h1 className='font-bold text-xl md:text-2xl text-slate-700 text-center'>{data[0].title}</h1>
+      <h1 className='font-bold text-xl md:text-2xl text-slate-700 text-center'>{singleProduct.title}</h1>
 
       <div className='flex justify-between w-4/5 items-center my-6 md:flex-col md:gap-4'>
-        <div className='font-bold text-xl md:text-2xl'>${data[0].price}</div>
+        <div className='font-bold text-xl md:text-2xl'>${singleProduct.price}</div>
         <Link href='' className='bg-slate-700 text-white rounded-md p-2 px-4 flex gap-4'> Add to Cart <Image src="/cart.webp" alt="" height={20} width={20}></Image></Link>
       </div>
 
-      <div className='mx-5 text-slate-700 text-center'> {data[0].desc}</div>
+      <div className='mx-5 text-slate-700 text-center'> {singleProduct.desc}</div>
       </div>
     </div>
   )

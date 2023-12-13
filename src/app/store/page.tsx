@@ -56,6 +56,8 @@ const Store = async () => {
   const Data:data = await getData()
 
   return (
+    <div>
+    <div className='bg-red-100 rounded-md p-4 font-bold'>This is how orders are going to look like once we have some</div>
     <div className='min-h-[calc(100vh-6rem)] h-auto flex flex-wrap mt-10 justify-center'>
       {Data.map((item) => (
         // ITEM CONTAINER 
@@ -83,6 +85,7 @@ const Store = async () => {
         </div>
       ))}
 
+    </div>
     </div>
   )
 }

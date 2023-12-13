@@ -2,10 +2,19 @@
 import React from 'react'
 import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
 
   const { data, status } = useSession();
+  const router = useRouter()
+
+  if (status === "loading"){
+    return <p>Loading..</p>
+  }
+  if (status === "authenticated"){
+    router.push("/");
+  }
 
   return (
     <div className='min-h-[calc(100vh-6rem)] h-auto flex flex-col items-center justify-center gap-5 align'>

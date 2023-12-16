@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="flex bg-slate-700 text-white justify-between gap-3 p-5"> 
         {/* TITLE CONTAINER */}
-        <div><h1 className='font-bold text-xl xl:mx-12'>Store</h1></div>
+        <div><h1 className='font-bold text-xl xl:mx-12'>Alosppetra</h1></div>
 
         {/* CONTEXT MENU  */}
         <div className='md:hidden cursor-pointer'>
